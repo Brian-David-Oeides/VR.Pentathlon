@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-
+using UnityEditorInternal;
 
 public class UnderscoreReplace : EditorWindow
 {
@@ -78,7 +78,8 @@ public class UnderscoreReplace : EditorWindow
 
 
             }
-
+            PrefabUtility.RecordPrefabInstancePropertyModifications(obj.transform);
+            EditorUtility.SetDirty(obj.transform);
         }
         this.Close();
     }
