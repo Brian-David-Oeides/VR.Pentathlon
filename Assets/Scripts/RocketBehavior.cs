@@ -7,6 +7,8 @@ public class RocketBehavior : MonoBehaviour
     [SerializeField] float _speed = 5f;
     [SerializeField] float _timer = 2f;
     [SerializeField] GameObject _explosionPrefab;
+    [SerializeField] private AudioClip _explosionSound; 
+    private bool _isFired = false;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +19,15 @@ public class RocketBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * _speed * Time.deltaTime);
+        if (_isFired) 
+        { 
+           transform.Translate(Vector3.forward * _speed * Time.deltaTime);
+        }
+    }
+
+    public void Launch()
+    {
+        _isFired = true;
     }
 
     IEnumerator DestroyTimer()
@@ -30,12 +40,27 @@ public class RocketBehavior : MonoBehaviour
     {
         print("test");
         if (other.CompareTag("Target") || other.CompareTag("Ground"))
-            DestroyThisWithExplosion();
+        { 
+           DestroyThisWithExplosion();
+        }
     }
 
     void DestroyThisWithExplosion()
     {
         Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
-        Destroy(this.gameObject);
+
+        // create a new GameObject for explosion sound
+        GameObject soundObject = new GameObject("ExplosionSound");
+        AudioSource audioSource = soundObject.AddComponent<AudioSource>();
+
+        // configure new AudioSource
+        audioSource.clip = _explosionSound;
+        audioSource.Play();
+
+        // destroy sound clip 
+        Destroy(soundObject, _explosionSound.length);
+
+        // destroy rocket immediately
+        Destroy(gameObject);
     }
 }

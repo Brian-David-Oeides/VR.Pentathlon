@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 406894}
   - component: {fileID: 6541054}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: collider3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,9 +65,9 @@ GameObject:
   - component: {fileID: 3320256}
   - component: {fileID: 5496852}
   - component: {fileID: 2377558}
-  - component: {fileID: 859555050919561125}
-  - component: {fileID: 6523950330263023746}
-  m_Layer: 0
+  - component: {fileID: 7093622653292217336}
+  - component: {fileID: 7524867789501918938}
+  m_Layer: 8
   m_Name: Nagamaki
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,8 +88,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 494186}
-  - {fileID: 2932776309332801666}
-  - {fileID: 4078696359930150211}
+  - {fileID: 3995579103358251851}
+  - {fileID: 706836405727607726}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &3320256
@@ -125,8 +125,8 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 64
-  m_CollisionDetection: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!23 &2377558
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -169,7 +169,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &859555050919561125
+--- !u!114 &7093622653292217336
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,8 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders:
-  - {fileID: 6541702}
+  m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -238,7 +237,19 @@ MonoBehaviour:
       m_Calls: []
   m_Activated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7524867789501918938}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Deactivated:
     m_PersistentCalls:
       m_Calls: []
@@ -272,8 +283,8 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 2932776309332801666}
-  m_SecondaryAttachTransform: {fileID: 4078696359930150211}
+  m_AttachTransform: {fileID: 3995579103358251851}
+  m_SecondaryAttachTransform: {fileID: 706836405727607726}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
@@ -322,22 +333,102 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &6523950330263023746
-MonoBehaviour:
+--- !u!82 &7524867789501918938
+AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109386}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43e566c9edd1b0d4ca49f866153a1da5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  primaryHand: {fileID: 2932776309332801666}
-  secondaryHand: {fileID: 4078696359930150211}
-  rb: {fileID: 5496852}
-  smoothFactor: 0.1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 85a129481e41b0f40a8e290c1c8368ce, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &116144
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,7 +439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 475202}
   - component: {fileID: 6540800}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: collider2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 430940}
   - component: {fileID: 6531154}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: collider5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -454,7 +545,7 @@ GameObject:
   m_Component:
   - component: {fileID: 459930}
   - component: {fileID: 6534592}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: collider4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -507,8 +598,8 @@ GameObject:
   m_Component:
   - component: {fileID: 408272}
   - component: {fileID: 6541702}
-  m_Layer: 0
-  m_Name: nagamaki_Handle
+  m_Layer: 8
+  m_Name: hilt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -560,7 +651,7 @@ GameObject:
   m_Component:
   - component: {fileID: 443358}
   - component: {fileID: 6548760}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: collider6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -612,7 +703,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 494186}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: _Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -640,7 +731,7 @@ Transform:
   - {fileID: 443358}
   m_Father: {fileID: 490976}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &850597563486891776
+--- !u!1 &2625613147834860207
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -648,30 +739,30 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2932776309332801666}
-  m_Layer: 0
+  - component: {fileID: 3995579103358251851}
+  m_Layer: 8
   m_Name: AttachPoint_RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2932776309332801666
+--- !u!4 &3995579103358251851
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 850597563486891776}
+  m_GameObject: {fileID: 2625613147834860207}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.025, y: -0.0125, z: -0.024}
+  m_LocalPosition: {x: -0.051, y: -0.012, z: -0.054}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 490976}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!1 &3400497181627457058
+--- !u!1 &4835057808483446275
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -679,24 +770,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4078696359930150211}
-  m_Layer: 0
+  - component: {fileID: 706836405727607726}
+  m_Layer: 8
   m_Name: AttachPoint_LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4078696359930150211
+--- !u!4 &706836405727607726
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3400497181627457058}
+  m_GameObject: {fileID: 4835057808483446275}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.029, y: -0.023, z: -0.485}
+  m_LocalPosition: {x: 0.026, y: 0, z: -0.479}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
