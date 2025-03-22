@@ -84,7 +84,7 @@ public class ExcavatorController : MonoBehaviour
     public void MoveArm(float direction)
     {
         if ((direction <= -0.1) || (direction >= -0.1))
-            _armRotDirection = direction;
+            _armRotDirection = -direction;
     }
 
     public void RotateCab(float direction)
